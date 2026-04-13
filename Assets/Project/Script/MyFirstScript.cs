@@ -13,7 +13,7 @@ public class MyFirstScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        monTransform.position += new Vector3(0.01f,0 , 0);
+        monTransform.position += new Vector3(0.01f, 0, 0);
         GetComponent<Transform>().position = GetComponent<Transform>().position + new Vector3(0.01f, 0, 0);
     }
 }
