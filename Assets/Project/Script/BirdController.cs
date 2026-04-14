@@ -1,19 +1,25 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BirdController : MonoBehaviour
 {
-    private Transform monTransform;
+    private Rigidbody2D _rigidbody2D;
+    public float jumpForce;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        monTransform = GetComponent<Transform>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        if (_rigidbody2D == null) Debug.LogError("BirdController: No Rigidbody2D found!");
     }
 
     // Update is called once per frame
     void Update()
     {
-        monTransform.position += new Vector3(0.01f, 0, 0);
-        GetComponent<Transform>().position = GetComponent<Transform>().position + new Vector3(0.01f, 0, 0);
+        // if (J'appuie sur la barre d'espace, le joueur "Bird" saute
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            _rigidbody2D.AddForceY(jumpForce, ForceMode2D.Impulse);
+        }
     }
 }
