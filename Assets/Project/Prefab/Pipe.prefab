@@ -148,8 +148,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3462700432942330138}
   - component: {fileID: 3372871909146199920}
+  - component: {fileID: 3551843768385639759}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TriggerPipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,8 +215,20 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.99}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &3551843768385639759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2944108569946431626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ac558409f5ee4439a7e3963e87761e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerScript
 --- !u!1 &6814813073158029772
 GameObject:
   m_ObjectHideFlags: 0

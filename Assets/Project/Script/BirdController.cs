@@ -28,4 +28,6 @@ public class BirdController : MonoBehaviour
     {
         Debug.Log("Game Over");
     }
+    
+    public enum GameState {Playing, GameOver}
 }
