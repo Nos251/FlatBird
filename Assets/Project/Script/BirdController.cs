@@ -1,33 +1,35 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BirdController : MonoBehaviour
+namespace Project.Script
 {
-    private Rigidbody2D _rigidbody2D;
-    public float jumpForce;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class BirdController : MonoBehaviour
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-        if (_rigidbody2D == null) Debug.LogError("BirdController: No Rigidbody2D found!");
-    }
+        private Rigidbody2D _rigidbody2D;
+        public float jumpForce;
 
-    // Update is called once per frame
-    void Update()
-    {
-        // if (J'appuie sur la barre d'espace, le joueur "Bird" saute
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
         {
-            _rigidbody2D.AddForceY(jumpForce, ForceMode2D.Impulse);
+            _rigidbody2D = GetComponent<Rigidbody2D>();
+            if (_rigidbody2D == null) Debug.LogError("BirdController: No Rigidbody2D found!");
         }
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Game Over");
-    }
+        // Update is called once per frame
+        void Update()
+        {
+            // if (J'appuie sur la barre d'espace, le joueur "Bird" saute
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                _rigidbody2D.AddForceY(jumpForce, ForceMode2D.Impulse);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            Debug.Log("Game Over");
+        }
     
-    public enum GameState {Playing, GameOver}
+        public enum GameState {Playing, GameOver}
+    }
 }
