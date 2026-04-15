@@ -31,5 +31,11 @@ namespace Project.Script
         }
     
         public enum GameState {Playing, GameOver}
+        
+        public void Die()
+        {
+            Time.timeScale = 0f;
+        }
+
     }
 }
